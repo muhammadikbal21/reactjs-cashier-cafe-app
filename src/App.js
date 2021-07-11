@@ -27,7 +27,7 @@ export default class App extends Component {
   }
   
   render() {
-    console.log("ini data di render: ", this.state.menus);
+    const {menus} = this.state
     return (
       <div className="App">
         <Header />
@@ -35,7 +35,7 @@ export default class App extends Component {
           <Container fluid>
             <Row>
               <Categories />
-              <Products />
+              <Products menus={menus} />
               <Cart />
             </Row>
           </Container>

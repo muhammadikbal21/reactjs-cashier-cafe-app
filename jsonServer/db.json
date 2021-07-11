@@ -32,7 +32,7 @@
       "name": "Nasi Goreng Telur",
       "price": 16000,
       "isReady": true,
-      "image": "nasi-goreng-telur.jpg",
+      "image": "nasi-goreng-telor.jpg",
       "category": {
         "id": 1,
         "name": "Makanan"
@@ -140,7 +140,7 @@
       "name": "Coffee Latte",
       "price": 12000,
       "isReady": true,
-      "image": "coffee-latte.jpg",
+      "image": "coffe-late.jpg",
       "category": {
         "id": 2,
         "name": "Minuman"
