@@ -1,0 +1,188 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Makanan"
+    },
+    {
+      "id": 2,
+      "name": "Minuman"
+    },
+    {
+      "id": 3,
+      "name": "Cemilan"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "code": "K-01",
+      "name": "Sate Ayam",
+      "price": 15000,
+      "isReady": true,
+      "image": "sate-ayam.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 2,
+      "code": "K-02",
+      "name": "Nasi Goreng Telur",
+      "price": 16000,
+      "isReady": true,
+      "image": "nasi-goreng-telur.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 3,
+      "code": "K-03",
+      "name": "Nasi Rames",
+      "price": 14000,
+      "isReady": true,
+      "image": "nasi-rames.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 4,
+      "code": "K-04",
+      "name": "Lontong Opor Ayam",
+      "price": 18000,
+      "isReady": true,
+      "image": "lontong-opor-ayam.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 5,
+      "code": "K-05",
+      "name": "Mie Goreng",
+      "price": 12000,
+      "isReady": true,
+      "image": "mie-goreng.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 6,
+      "code": "K-06",
+      "name": "Bakso",
+      "price": 12000,
+      "isReady": true,
+      "image": "bakso.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 7,
+      "code": "K-07",
+      "name": "Mie Ayam Bakso",
+      "price": 14000,
+      "isReady": true,
+      "image": "mie-ayam-bakso.jpg",
+      "category": {
+        "id": 1,
+        "name": "Makanan"
+      }
+    },
+    {
+      "id": 8,
+      "code": "K-08",
+      "name": "Pangsit 6 Pcs",
+      "price": 5000,
+      "isReady": true,
+      "image": "pangsit.jpg",
+      "category": {
+        "id": 3,
+        "name": "Cemilan"
+      }
+    },
+    {
+      "id": 9,
+      "code": "K-09",
+      "name": "Kentang Goreng",
+      "price": 5000,
+      "isReady": true,
+      "image": "kentang-goreng.jpg",
+      "category": {
+        "id": 3,
+        "name": "Cemilan"
+      }
+    },
+    {
+      "id": 10,
+      "code": "K-10",
+      "name": "Cheese Burger",
+      "price": 15000,
+      "isReady": true,
+      "image": "cheese-burger.jpg",
+      "category": {
+        "id": 3,
+        "name": "Cemilan"
+      }
+    },
+    {
+      "id": 11,
+      "code": "K-11",
+      "name": "Coffee Latte",
+      "price": 12000,
+      "isReady": true,
+      "image": "coffee-latte.jpg",
+      "category": {
+        "id": 2,
+        "name": "Minuman"
+      }
+    },
+    {
+      "id": 12,
+      "code": "K-12",
+      "name": "Es Jeruk",
+      "price": 8000,
+      "isReady": true,
+      "image": "es-jeruk.jpg",
+      "category": {
+        "id": 2,
+        "name": "Minuman"
+      }
+    },
+    {
+      "id": 13,
+      "code": "K-13",
+      "name": "Es Teh",
+      "price": 5000,
+      "isReady": true,
+      "image": "es-teh.jpg",
+      "category": {
+        "id": 2,
+        "name": "Minuman"
+      }
+    },
+    {
+      "id": 14,
+      "code": "K-14",
+      "name": "Teh Hangat",
+      "price": 3000,
+      "isReady": true,
+      "image": "teh-hangat.jpg",
+      "category": {
+        "id": 2,
+        "name": "Minuman"
+      }
+    }
+  ],
+  "carts": [],
+  "orders": []
+}

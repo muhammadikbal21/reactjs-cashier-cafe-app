@@ -1,0 +1,2 @@
+1. pindah ke direktori tempat db.json berada
+2. json-server --watch db.json --port=3004
