@@ -8,7 +8,7 @@ const Menus = ({menu}) => {
       <Card className="shadow">
         <Card.Img variant="top" src={`assets/images/${menu.category.name.toLowerCase()}/${menu.image}`} style={{width: '100%', height: 200}} />
         <Card.Body>
-          <Card.Title as="h6" as="strong">{menu.name}</Card.Title>
+          <Card.Title as={"h6" && "strong"}>{menu.name} ({menu.code})</Card.Title>
           <Card.Text>
             Rp. {numberWithCommas(menu.price)}
           </Card.Text>
