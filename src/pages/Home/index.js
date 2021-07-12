@@ -119,7 +119,7 @@ export default class Home extends Component {
           <Row>
             <Categories changeCategory={this.changeCategory} chooseCategory={chooseCategory} />
             <Products menus={menus} cartIn={this.cartIn} />
-            <Cart carts={carts} />
+            <Cart carts={carts} {...this.props} />
           </Row>
         </Container>
       </div>

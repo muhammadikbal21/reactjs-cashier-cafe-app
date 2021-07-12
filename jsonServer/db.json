@@ -183,75 +183,121 @@
       }
     }
   ],
-  "carts": [
+  "carts": [],
+  "orders": [
     {
-      "quantity": 4,
-      "totalPrice": 60000,
-      "product": {
-        "id": 1,
-        "code": "K-01",
-        "name": "Sate Ayam",
-        "price": 15000,
-        "isReady": true,
-        "image": "sate-ayam.jpg",
-        "category": {
-          "id": 1,
-          "name": "Makanan"
+      "totalBuy": 90000,
+      "menus": [
+        {
+          "quantity": 2,
+          "totalPrice": 30000,
+          "product": {
+            "id": 1,
+            "code": "K-01",
+            "name": "Sate Ayam",
+            "price": 15000,
+            "isReady": true,
+            "image": "sate-ayam.jpg",
+            "category": {
+              "id": 1,
+              "name": "Makanan"
+            }
+          },
+          "id": 1
+        },
+        {
+          "quantity": 2,
+          "totalPrice": 28000,
+          "product": {
+            "id": 3,
+            "code": "K-03",
+            "name": "Nasi Rames",
+            "price": 14000,
+            "isReady": true,
+            "image": "nasi-rames.jpg",
+            "category": {
+              "id": 1,
+              "name": "Makanan"
+            }
+          },
+          "id": 2
+        },
+        {
+          "quantity": 2,
+          "totalPrice": 32000,
+          "product": {
+            "id": 2,
+            "code": "K-02",
+            "name": "Nasi Goreng Telur",
+            "price": 16000,
+            "isReady": true,
+            "image": "nasi-goreng-telor.jpg",
+            "category": {
+              "id": 1,
+              "name": "Makanan"
+            }
+          },
+          "id": 3
         }
-      },
+      ],
       "id": 1
     },
     {
-      "quantity": 5,
-      "totalPrice": 70000,
-      "product": {
-        "id": 3,
-        "code": "K-03",
-        "name": "Nasi Rames",
-        "price": 14000,
-        "isReady": true,
-        "image": "nasi-rames.jpg",
-        "category": {
-          "id": 1,
-          "name": "Makanan"
+      "totalBuy": 66000,
+      "menus": [
+        {
+          "quantity": 2,
+          "totalPrice": 24000,
+          "product": {
+            "id": 6,
+            "code": "K-06",
+            "name": "Bakso",
+            "price": 12000,
+            "isReady": true,
+            "image": "bakso.jpg",
+            "category": {
+              "id": 1,
+              "name": "Makanan"
+            }
+          },
+          "id": 1
+        },
+        {
+          "quantity": 2,
+          "totalPrice": 24000,
+          "product": {
+            "id": 5,
+            "code": "K-05",
+            "name": "Mie Goreng",
+            "price": 12000,
+            "isReady": true,
+            "image": "mie-goreng.jpg",
+            "category": {
+              "id": 1,
+              "name": "Makanan"
+            }
+          },
+          "id": 2
+        },
+        {
+          "quantity": 1,
+          "totalPrice": 18000,
+          "product": {
+            "id": 4,
+            "code": "K-04",
+            "name": "Lontong Opor Ayam",
+            "price": 18000,
+            "isReady": true,
+            "image": "lontong-opor-ayam.jpg",
+            "category": {
+              "id": 1,
+              "name": "Makanan"
+            }
+          },
+          "id": 3
         }
-      },
+      ],
       "id": 2
-    },
-    {
-      "quantity": 2,
-      "totalPrice": 24000,
-      "product": {
-        "id": 6,
-        "code": "K-06",
-        "name": "Bakso",
-        "price": 12000,
-        "isReady": true,
-        "image": "bakso.jpg",
-        "category": {
-          "id": 1,
-          "name": "Makanan"
-        }
-      },
-      "id": 3
-    },
-    {
-      "quantity": 2,
-      "totalPrice": 36000,
-      "product": {
-        "id": 4,
-        "code": "K-04",
-        "name": "Lontong Opor Ayam",
-        "price": 18000,
-        "isReady": true,
-        "image": "lontong-opor-ayam.jpg",
-        "category": {
-          "id": 1,
-          "name": "Makanan"
-        }
-      },
-      "id": 4
     }
-  ],
-  "orders": []
+  ]
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Badge, Col, ListGroup, Row } from 'react-bootstrap'
 import { numberWithCommas } from '../../utils/numberFormats'
+import { Buy } from '../../components'
 
 export default class Cart extends Component {
   render() {
@@ -14,7 +15,7 @@ export default class Cart extends Component {
             <ListGroup variant="flush">
               {
                 carts.map((cart) => (
-                  <ListGroup.Item>
+                  <ListGroup.Item key={cart.id}>
                     <Row>
                       <Col xs={2}>
                         <h5>
@@ -33,6 +34,7 @@ export default class Cart extends Component {
             </ListGroup>
           )
         }
+        <Buy carts={carts} {...this.props} />
       </Col>
     )
   }
