@@ -37,6 +37,19 @@ export default class App extends Component {
     })
   }
 
+  componentDidUpdate(prevState) {
+    if (this.state.carts !== prevState.carts) {
+      axios.get(`${API_URL}/carts`)
+      .then(res => {
+        const carts = res.data
+        this.setState({carts: carts})
+      })
+      .catch(err => {
+        console.log("Ini Error Ya: ", err);
+      })
+    }
+  }
+
   changeCategory = (value) => {
     this.setState({
       chooseCategory: value,

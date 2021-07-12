@@ -185,8 +185,8 @@
   ],
   "carts": [
     {
-      "quantity": 3,
-      "totalPrice": 45000,
+      "quantity": 4,
+      "totalPrice": 60000,
       "product": {
         "id": 1,
         "code": "K-01",
@@ -202,8 +202,8 @@
       "id": 1
     },
     {
-      "quantity": 3,
-      "totalPrice": 42000,
+      "quantity": 4,
+      "totalPrice": 56000,
       "product": {
         "id": 3,
         "code": "K-03",
@@ -234,6 +234,23 @@
         }
       },
       "id": 3
+    },
+    {
+      "quantity": 2,
+      "totalPrice": 36000,
+      "product": {
+        "id": 4,
+        "code": "K-04",
+        "name": "Lontong Opor Ayam",
+        "price": 18000,
+        "isReady": true,
+        "image": "lontong-opor-ayam.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 4
     }
   ],
   "orders": []

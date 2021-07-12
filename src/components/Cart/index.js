@@ -17,12 +17,12 @@ export default class Cart extends Component {
                   <ListGroup.Item>
                     <Row>
                       <Col xs={2}>
-                        <h4>
+                        <h5>
                           <Badge style={{backgroundColor: 'green', borderRadius: 30}}>{cart.quantity}</Badge>
-                        </h4>
+                        </h5>
                       </Col>
                       <Col>
-                        <h5>{cart.product.name}</h5>
+                        <h6 style={{fontWeight: 'bold'}}>{cart.product.name}</h6>
                         <p>Rp. {numberWithCommas(cart.product.price)}</p>
                       </Col>
                       <Col><strong className="float-right">Rp. {numberWithCommas(cart.totalPrice)}</strong></Col>
