@@ -3,6 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import { Header, Products, Categories, Cart } from './components';
 import { API_URL } from './utils/constants'
 import axios from 'axios'
+import swal from 'sweetalert'
 
 
 export default class App extends Component {
@@ -44,7 +45,49 @@ export default class App extends Component {
   }
 
   cartIn = (value) => {
-    console.log("Menu: ", value);
+    axios.get(`${API_URL}/carts?product.id=${value.id}`)
+    .then(res => {
+      if (res.data.length === 0) {
+        const cart = {
+          quantity: 1,
+          totalPrice: value.price,
+          product: value
+        }
+        axios.post(`${API_URL}/carts`, cart)
+        .then(res => {
+          swal({
+            title: "Sukses!",
+            text: `${cart.product.name} sukses masuk ke keranjang`,
+            icon: "success",
+            buttons: false,
+            timer: 2_000
+          })
+          console.log("Added: ", res);
+        })
+      } else {
+        const cart = {
+          quantity: res.data[0].quantity + 1,
+          totalPrice: res.data[0].totalPrice + value.price,
+          product: value
+        }
+        axios.put(`${API_URL}/carts/${res.data[0].id}`, cart)
+        .then(res => {
+          swal({
+            title: "Sukses!",
+            text: `${cart.product.name} sukses masuk ke keranjang`,
+            icon: "success",
+            buttons: false,
+            timer: 2_000
+          })
+        })
+        .catch(err => {
+          console.log("Ini Error Ya: ", err);
+        })
+      }
+    })
+    .catch(err => {
+      console.log("Ini Error Ya: ", err);
+    })
   }
   
   render() {
