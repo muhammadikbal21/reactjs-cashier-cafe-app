@@ -202,8 +202,8 @@
       "id": 1
     },
     {
-      "quantity": 2,
-      "totalPrice": 28000,
+      "quantity": 3,
+      "totalPrice": 42000,
       "product": {
         "id": 3,
         "code": "K-03",

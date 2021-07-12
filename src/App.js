@@ -26,6 +26,15 @@ export default class App extends Component {
     .catch(err => {
       console.log("Ini Error Ya: ", err);
     })
+
+    axios.get(`${API_URL}/carts`)
+    .then(res => {
+      const carts = res.data
+      this.setState({carts: carts})
+    })
+    .catch(err => {
+      console.log("Ini Error Ya: ", err);
+    })
   }
 
   changeCategory = (value) => {
@@ -91,7 +100,7 @@ export default class App extends Component {
   }
   
   render() {
-    const {menus, chooseCategory} = this.state
+    const {menus, chooseCategory, carts} = this.state
     return (
       <div className="App">
         <Header />
@@ -100,7 +109,7 @@ export default class App extends Component {
             <Row>
               <Categories changeCategory={this.changeCategory} chooseCategory={chooseCategory} />
               <Products menus={menus} cartIn={this.cartIn} />
-              <Cart />
+              <Cart carts={carts} />
             </Row>
           </Container>
         </div>
