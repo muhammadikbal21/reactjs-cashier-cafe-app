@@ -11,7 +11,8 @@ export default class App extends Component {
   
     this.state = {
       menus: [],
-      chooseCategory: 'Makanan'
+      chooseCategory: 'Makanan',
+      carts: []
     }
   }
 
@@ -41,6 +42,10 @@ export default class App extends Component {
       console.log("Ini Error Ya: ", err);
     })
   }
+
+  cartIn = (value) => {
+    console.log("Menu: ", value);
+  }
   
   render() {
     const {menus, chooseCategory} = this.state
@@ -51,7 +56,7 @@ export default class App extends Component {
           <Container fluid>
             <Row>
               <Categories changeCategory={this.changeCategory} chooseCategory={chooseCategory} />
-              <Products menus={menus} />
+              <Products menus={menus} cartIn={this.cartIn} />
               <Cart />
             </Row>
           </Container>
