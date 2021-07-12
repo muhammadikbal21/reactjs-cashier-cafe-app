@@ -10,14 +10,30 @@ export default class App extends Component {
     super(props)
   
     this.state = {
-      menus: []
+      menus: [],
+      chooseCategory: 'Makanan'
     }
   }
 
   componentDidMount() {
-    axios.get(API_URL+"products")
+    axios.get(`${API_URL}/products?category.name=${this.state.chooseCategory}`)
     .then(res => {
-      console.log("Response: ", res);
+      const menus = res.data
+      this.setState({menus: menus})
+    })
+    .catch(err => {
+      console.log("Ini Error Ya: ", err);
+    })
+  }
+
+  changeCategory = (value) => {
+    this.setState({
+      chooseCategory: value,
+      menu: []
+    })
+
+    axios.get(`${API_URL}/products?category.name=${value}`)
+    .then(res => {
       const menus = res.data
       this.setState({menus: menus})
     })
@@ -27,14 +43,14 @@ export default class App extends Component {
   }
   
   render() {
-    const {menus} = this.state
+    const {menus, chooseCategory} = this.state
     return (
       <div className="App">
         <Header />
         <div className="mt-3">
           <Container fluid>
             <Row>
-              <Categories />
+              <Categories changeCategory={this.changeCategory} chooseCategory={chooseCategory} />
               <Products menus={menus} />
               <Cart />
             </Row>
