@@ -183,26 +183,7 @@
       }
     }
   ],
-  "carts": [
-    {
-      "quantity": 3,
-      "totalPrice": 42000,
-      "product": {
-        "id": 3,
-        "code": "K-03",
-        "name": "Nasi Rames",
-        "price": 14000,
-        "isReady": true,
-        "image": "nasi-rames.jpg",
-        "category": {
-          "id": 1,
-          "name": "Makanan"
-        }
-      },
-      "note": "eh iya wkwk 4",
-      "id": 1
-    }
-  ],
+  "carts": [],
   "orders": [
     {
       "totalBuy": 90000,

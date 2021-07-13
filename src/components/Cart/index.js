@@ -81,6 +81,23 @@ export default class Cart extends Component {
     })
   }
 
+  onDelete = (id) => {
+    this.handleClose()
+    axios.delete(`${API_URL}/carts/${id}`)
+    .then((res) => {
+      swal({
+        title: "Hapus Sukses!",
+        text: `${this.state.cartDetail.product.name} sukses dihapus di keranjang`,
+        icon: "success",
+        buttons: false,
+        timer: 2_000
+      })
+      .catch((err) => {
+        console.log("Ini Error : ", err);
+      })
+    })
+  }
+
   render() {
     const {carts} = this.props
     return (
@@ -108,7 +125,15 @@ export default class Cart extends Component {
                   </ListGroup.Item>
                 ))
               }
-              <CartModals handleClose={this.handleClose} {...this.state} increament={this.increament} decreament={this.decreament} changeHandler={this.changeHandler} handleSubmit={this.handleSubmit} />
+              <CartModals 
+              handleClose={this.handleClose} 
+              {...this.state} 
+              increament={this.increament} 
+              decreament={this.decreament} 
+              changeHandler={this.changeHandler} 
+              handleSubmit={this.handleSubmit} 
+              onDelete={this.onDelete}
+              />
             </ListGroup>
           )
         }

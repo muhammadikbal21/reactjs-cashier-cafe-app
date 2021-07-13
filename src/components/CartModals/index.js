@@ -14,7 +14,8 @@ const CartModals = ({
   decreament,
   changeHandler,
   handleSubmit,
-  totalPrice
+  totalPrice,
+  onDelete
 }) => {
   if (cartDetail) {
     return (
@@ -67,7 +68,7 @@ const CartModals = ({
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="danger">
+          <Button variant="danger" onClick={() => onDelete(cartDetail.id)}>
             <FontAwesomeIcon icon={faTrash} /> Hapus pesanan
           </Button>
         </Modal.Footer>
