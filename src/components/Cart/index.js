@@ -83,21 +83,31 @@ export default class Cart extends Component {
   }
 
   onDelete = (id) => {
-    this.handleClose()
-    axios.delete(`${API_URL}/carts/${id}`)
-    .then((res) => {
-      this.props.getListCarts()
-      swal({
-        title: "Hapus Sukses!",
-        text: `${this.state.cartDetail.product.name} sukses dihapus di keranjang`,
-        icon: "success",
-        buttons: false,
-        timer: 2_000
-      })
-      .catch((err) => {
-        console.log("Ini Error : ", err);
-      })
-    })
+    swal({
+      title: `Anda yakin menghapus ${this.state.cartDetail.product.name}?`,
+      text: `${this.state.cartDetail.product.name} akan dihapus dalam daftar belanja`,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+        if (willDelete) {
+          axios.delete(`${API_URL}/carts/${id}`)
+          .then((res) => {
+            this.props.getListCarts()
+            swal(`${this.state.cartDetail.product.name} berhasil dihapus!`, {
+              icon: "success",
+              buttons: false,
+              timer: 2_000
+            });
+            this.handleClose()
+          })
+          .catch((err) => {
+            console.log("Ini Error : ", err);
+          })
+        } else {
+          swal(`${this.state.cartDetail.product.name} batal dihapus`);
+        }
+    });
   }
 
   render() {
