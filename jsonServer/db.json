@@ -185,8 +185,8 @@
   ],
   "carts": [
     {
-      "quantity": 2,
-      "totalPrice": 28000,
+      "quantity": 3,
+      "totalPrice": 42000,
       "product": {
         "id": 3,
         "code": "K-03",
@@ -199,6 +199,7 @@
           "name": "Makanan"
         }
       },
+      "note": "eh iya wkwk 4",
       "id": 1
     }
   ],

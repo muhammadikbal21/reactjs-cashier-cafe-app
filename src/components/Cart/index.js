@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Badge, Col, ListGroup, Row } from 'react-bootstrap'
 import { numberWithCommas } from '../../utils/numberFormats'
 import { Buy, CartModals } from '../../components'
+import axios from 'axios'
+import { API_URL } from '../../utils/constants'
+import swal from 'sweetalert'
 
 export default class Cart extends Component {
   constructor(props) {
@@ -11,7 +14,8 @@ export default class Cart extends Component {
       showModal: false,
       cartDetail: false,
       quantity: 0,
-      note: ''
+      note: '',
+      totalPrice: 0
     }
   }
 
@@ -20,7 +24,8 @@ export default class Cart extends Component {
       showModal: true,
       cartDetail: cart,
       quantity: cart.quantity,
-      note: cart.note
+      note: cart.note,
+      totalPrice: cart.totalPrice
     })
   }
   
@@ -32,14 +37,16 @@ export default class Cart extends Component {
 
   increament = () => {
     this.setState({
-      quantity: this.state.quantity + 1
+      quantity: this.state.quantity + 1,
+      totalPrice: this.state.cartDetail.product.price * (this.state.quantity + 1)
     })
   }
-
+  
   decreament = () => {
     if (this.state.quantity !== 1) {
       this.setState({
-        quantity: this.state.quantity - 1
+        quantity: this.state.quantity - 1,
+        totalPrice: this.state.cartDetail.product.price * (this.state.quantity - 1)
       })
     }
   }
@@ -52,7 +59,26 @@ export default class Cart extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault() // agar ketika di submit tidak akan me-reload lagi
-    console.log(this.state.note);
+    this.handleClose()
+    const data = {
+      quantity: this.state.quantity,
+      totalPrice: this.state.totalPrice,
+      product: this.state.cartDetail.product,
+      note: this.state.note
+    }
+    axios.put(`${API_URL}/carts/${this.state.cartDetail.id}`, data)
+    .then((res) => {
+      swal({
+        title: "Update Sukses!",
+        text: `${data.product.name} sukses update ke keranjang`,
+        icon: "success",
+        buttons: false,
+        timer: 2_000
+      })
+      .catch((err) => {
+        console.log("Ini Error : ", err);
+      })
+    })
   }
 
   render() {

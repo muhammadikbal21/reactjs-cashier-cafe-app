@@ -1,19 +1,28 @@
-import React from 'react'
-import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Button, Form, Modal } from 'react-bootstrap'
-import { numberWithCommas } from '../../utils/numberFormats'
+import React from "react";
+import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Form, Modal } from "react-bootstrap";
+import { numberWithCommas } from "../../utils/numberFormats";
 
-const CartModals = ({showModal, handleClose, cartDetail, quantity, note, increament, decreament, changeHandler, handleSubmit}) => {
+const CartModals = ({
+  showModal,
+  handleClose,
+  cartDetail,
+  quantity,
+  note,
+  increament,
+  decreament,
+  changeHandler,
+  handleSubmit,
+  totalPrice
+}) => {
   if (cartDetail) {
     return (
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>
-            {cartDetail.product.name} {" "}
-            <strong>
-              (Rp. {numberWithCommas(cartDetail.product.price)})
-            </strong>
+            {cartDetail.product.name}{" "}
+            <strong>(Rp. {numberWithCommas(cartDetail.product.price)})</strong>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -21,27 +30,35 @@ const CartModals = ({showModal, handleClose, cartDetail, quantity, note, incream
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga :</Form.Label>
               <p>
-                <strong>
-                  Rp. {numberWithCommas(cartDetail.totalPrice)}
-                </strong>
+                <strong>Rp. {numberWithCommas(totalPrice)}</strong>
               </p>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Jumlah :</Form.Label>
               <br />
-              <Button variant="primary" size="sm" style={{marginRight: 12}}>
-                <FontAwesomeIcon icon={faPlus} onClick={() => increament()} />
+              <Button variant="primary" size="sm" style={{ marginRight: 12 }} onClick={() => decreament()}>
+                <FontAwesomeIcon icon={faMinus} />
               </Button>
               <strong>{quantity}</strong>
-              <Button variant="primary" size="sm" style={{marginLeft: 12}}>
-                <FontAwesomeIcon icon={faMinus} onClick={() => decreament()} />
+              <Button variant="primary" size="sm" style={{ marginLeft: 12 }} onClick={() => increament()}>
+                <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlTextarea1" style={{marginTop: 12}}>
+            <Form.Group
+              controlId="exampleForm.ControlTextarea1"
+              style={{ marginTop: 12 }}
+            >
               <Form.Label>Catatan :</Form.Label>
-              <Form.Control as="textarea" rows={3} name="note" placeholder="Contoh : Pedas, Nasi Setengah" value={note} onChange={(event) => changeHandler(event)} />
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="note"
+                placeholder="Contoh : Pedas, Nasi Setengah"
+                value={note}
+                onChange={(event) => changeHandler(event)}
+              />
             </Form.Group>
-            <Button variant="primary" type="submit" style={{marginTop: 15}}>
+            <Button variant="primary" type="submit" style={{ marginTop: 15 }}>
               Simpan
             </Button>
           </Form>
@@ -51,14 +68,12 @@ const CartModals = ({showModal, handleClose, cartDetail, quantity, note, incream
             Close
           </Button>
           <Button variant="danger">
-            <FontAwesomeIcon icon={faTrash} /> {" "}
-            Hapus pesanan
+            <FontAwesomeIcon icon={faTrash} /> Hapus pesanan
           </Button>
         </Modal.Footer>
       </Modal>
-    )
-  } 
-  else {
+    );
+  } else {
     return (
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
@@ -74,8 +89,8 @@ const CartModals = ({showModal, handleClose, cartDetail, quantity, note, incream
           </Button>
         </Modal.Footer>
       </Modal>
-    )
+    );
   }
-}
+};
 
-export default CartModals
+export default CartModals;
