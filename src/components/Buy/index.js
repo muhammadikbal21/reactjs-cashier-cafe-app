@@ -24,22 +24,43 @@ export default class Buy extends Component {
     }, 0)
 
     return (
-      <div className="fixed-bottom">
-        <Row>
-          <Col md={{span: 3, offset: 9}} className="px-4">
-            <h4>
-              Total Harga:{" "}
-              <strong className="float-right mr-2">
-                Rp. {numberWithCommas(totalBuy)}
-              </strong>
-            </h4>
-            <Button variant="primary" style={{width: '100%'}} className="mb-2 mt-4 mr-2" size="lg" onClick={() => this.submitTotalBuy(totalBuy)}>
-              <FontAwesomeIcon icon={faShoppingCart} />{" "}
-              <strong>BAYAR</strong>
-            </Button>
-          </Col>
-        </Row>
-      </div>
+      <>
+        {/* WEB */}
+        <div className="fixed-bottom d-none d-md-block">
+          <Row>
+            <Col md={{span: 3, offset: 9}} className="px-4">
+              <h4>
+                Total Harga:{" "}
+                <strong className="float-right mr-2">
+                  Rp. {numberWithCommas(totalBuy)}
+                </strong>
+              </h4>
+              <Button variant="primary" style={{width: '100%'}} className="mb-2 mt-4 mr-2" size="lg" onClick={() => this.submitTotalBuy(totalBuy)}>
+                <FontAwesomeIcon icon={faShoppingCart} />{" "}
+                <strong>BAYAR</strong>
+              </Button>
+            </Col>
+          </Row>
+        </div>
+
+        {/* MOBILE */}
+        <div className="d-sm-block d-md-none mt-3">
+          <Row>
+            <Col md={{span: 3, offset: 9}} className="px-4">
+              <h4>
+                Total Harga:{" "}
+                <strong className="float-right mr-2">
+                  Rp. {numberWithCommas(totalBuy)}
+                </strong>
+              </h4>
+              <Button variant="primary" style={{width: '100%'}} className="mb-2 mt-4 mr-2" size="lg" onClick={() => this.submitTotalBuy(totalBuy)}>
+                <FontAwesomeIcon icon={faShoppingCart} />{" "}
+                <strong>BAYAR</strong>
+              </Button>
+            </Col>
+          </Row>
+        </div>
+      </>
     )
   }
 }

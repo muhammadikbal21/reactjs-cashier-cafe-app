@@ -114,7 +114,7 @@ export default class Cart extends Component {
   render() {
     const {carts} = this.props
     return (
-      <Col md={3} mt="2"> {/* md={3} artinya size grid dari column ini adalah 2 grid */}
+      <Col md={3} className="mt-3"> {/* md={3} artinya size grid dari column ini adalah 2 grid */}
         <h4><strong>Daftar Belanja</strong></h4>
         <hr />
         {

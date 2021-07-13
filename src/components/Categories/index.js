@@ -38,7 +38,7 @@ export default class Categories extends Component {
     const {categories} = this.state
     const {changeCategory, chooseCategory} = this.props
     return (
-      <Col md={2} mt="2"> {/* md={2} artinya size grid dari column ini adalah 2 grid */}
+      <Col md={2} className="mt-3"> {/* md={2} artinya size grid dari column ini adalah 2 grid */}
         <h4><strong>Daftar Kategori</strong></h4>
         <hr />
         <ListGroup>
