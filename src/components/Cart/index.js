@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Badge, Col, ListGroup, Row } from 'react-bootstrap'
+import { Badge, Card, Col, ListGroup, Row } from 'react-bootstrap'
 import { numberWithCommas } from '../../utils/numberFormats'
 import { Buy, CartModals } from '../../components'
 import axios from 'axios'
@@ -106,6 +106,7 @@ export default class Cart extends Component {
           })
         } else {
           swal(`${this.state.cartDetail.product.name} batal dihapus`);
+          this.handleClose()
         }
     });
   }
@@ -118,35 +119,37 @@ export default class Cart extends Component {
         <hr />
         {
           carts.length !== 0 && (
-            <ListGroup variant="flush">
-              {
-                carts.map((cart) => (
-                  <ListGroup.Item key={cart.id} onClick={() => this.handleShow(cart)}>
-                    <Row>
-                      <Col xs={2}>
-                        <h5>
-                          <Badge style={{backgroundColor: 'green', borderRadius: 30}}>{cart.quantity}</Badge>
-                        </h5>
-                      </Col>
-                      <Col>
-                        <h6 style={{fontWeight: 'bold'}}>{cart.product.name}</h6>
-                        <p>Rp. {numberWithCommas(cart.product.price)}</p>
-                      </Col>
-                      <Col><strong className="float-right">Rp. {numberWithCommas(cart.totalPrice)}</strong></Col>
-                    </Row>
-                  </ListGroup.Item>
-                ))
-              }
-              <CartModals 
-              handleClose={this.handleClose} 
-              {...this.state} 
-              increament={this.increament} 
-              decreament={this.decreament} 
-              changeHandler={this.changeHandler} 
-              handleSubmit={this.handleSubmit} 
-              onDelete={this.onDelete}
-              />
-            </ListGroup>
+            <Card className="overflow-auto cart">
+              <ListGroup variant="flush">
+                {
+                  carts.map((cart) => (
+                    <ListGroup.Item key={cart.id} onClick={() => this.handleShow(cart)}>
+                      <Row>
+                        <Col xs={2}>
+                          <h5>
+                            <Badge style={{backgroundColor: 'green', borderRadius: 30}}>{cart.quantity}</Badge>
+                          </h5>
+                        </Col>
+                        <Col>
+                          <h6 style={{fontWeight: 'bold'}}>{cart.product.name}</h6>
+                          <p>Rp. {numberWithCommas(cart.product.price)}</p>
+                        </Col>
+                        <Col><strong className="float-right">Rp. {numberWithCommas(cart.totalPrice)}</strong></Col>
+                      </Row>
+                    </ListGroup.Item>
+                  ))
+                }
+                <CartModals 
+                handleClose={this.handleClose} 
+                {...this.state} 
+                increament={this.increament} 
+                decreament={this.decreament} 
+                changeHandler={this.changeHandler} 
+                handleSubmit={this.handleSubmit} 
+                onDelete={this.onDelete}
+                />
+              </ListGroup>
+            </Card>
           )
         }
         <Buy carts={carts} {...this.props} />

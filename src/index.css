@@ -18,6 +18,14 @@ body {
   background-color: #22668A;
 }
 
+.cart {
+  height: 650px;
+}
+
+.overflow-auto::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

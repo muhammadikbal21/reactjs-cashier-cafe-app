@@ -183,7 +183,178 @@
       }
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "quantity": 1,
+      "totalPrice": 14000,
+      "product": {
+        "id": 3,
+        "code": "K-03",
+        "name": "Nasi Rames",
+        "price": 14000,
+        "isReady": true,
+        "image": "nasi-rames.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 1
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 15000,
+      "product": {
+        "id": 1,
+        "code": "K-01",
+        "name": "Sate Ayam",
+        "price": 15000,
+        "isReady": true,
+        "image": "sate-ayam.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 2
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 16000,
+      "product": {
+        "id": 2,
+        "code": "K-02",
+        "name": "Nasi Goreng Telur",
+        "price": 16000,
+        "isReady": true,
+        "image": "nasi-goreng-telor.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 3
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 12000,
+      "product": {
+        "id": 6,
+        "code": "K-06",
+        "name": "Bakso",
+        "price": 12000,
+        "isReady": true,
+        "image": "bakso.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 4
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 14000,
+      "product": {
+        "id": 7,
+        "code": "K-07",
+        "name": "Mie Ayam Bakso",
+        "price": 14000,
+        "isReady": true,
+        "image": "mie-ayam-bakso.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 5
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 18000,
+      "product": {
+        "id": 4,
+        "code": "K-04",
+        "name": "Lontong Opor Ayam",
+        "price": 18000,
+        "isReady": true,
+        "image": "lontong-opor-ayam.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 6
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 12000,
+      "product": {
+        "id": 5,
+        "code": "K-05",
+        "name": "Mie Goreng",
+        "price": 12000,
+        "isReady": true,
+        "image": "mie-goreng.jpg",
+        "category": {
+          "id": 1,
+          "name": "Makanan"
+        }
+      },
+      "id": 7
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 12000,
+      "product": {
+        "id": 11,
+        "code": "K-11",
+        "name": "Coffee Latte",
+        "price": 12000,
+        "isReady": true,
+        "image": "coffe-late.jpg",
+        "category": {
+          "id": 2,
+          "name": "Minuman"
+        }
+      },
+      "id": 8
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 8000,
+      "product": {
+        "id": 12,
+        "code": "K-12",
+        "name": "Es Jeruk",
+        "price": 8000,
+        "isReady": true,
+        "image": "es-jeruk.jpg",
+        "category": {
+          "id": 2,
+          "name": "Minuman"
+        }
+      },
+      "id": 9
+    },
+    {
+      "quantity": 1,
+      "totalPrice": 5000,
+      "product": {
+        "id": 13,
+        "code": "K-13",
+        "name": "Es Teh",
+        "price": 5000,
+        "isReady": true,
+        "image": "es-teh.jpg",
+        "category": {
+          "id": 2,
+          "name": "Minuman"
+        }
+      },
+      "id": 10
+    }
+  ],
   "orders": [
     {
       "totalBuy": 90000,
