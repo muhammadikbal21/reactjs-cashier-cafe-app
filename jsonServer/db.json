@@ -185,8 +185,8 @@
   ],
   "carts": [
     {
-      "quantity": 1,
-      "totalPrice": 14000,
+      "quantity": 2,
+      "totalPrice": 28000,
       "product": {
         "id": 3,
         "code": "K-03",

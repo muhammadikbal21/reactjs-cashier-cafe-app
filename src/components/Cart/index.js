@@ -18,7 +18,9 @@ export default class Cart extends Component {
   handleShow = (cart) => {
     this.setState({
       showModal: true,
-      cartDetail: cart
+      cartDetail: cart,
+      quantity: cart.quantity,
+      note: cart.note
     })
   }
   
@@ -26,6 +28,31 @@ export default class Cart extends Component {
     this.setState({
       showModal: false
     })
+  }
+
+  increament = () => {
+    this.setState({
+      quantity: this.state.quantity + 1
+    })
+  }
+
+  decreament = () => {
+    if (this.state.quantity !== 1) {
+      this.setState({
+        quantity: this.state.quantity - 1
+      })
+    }
+  }
+
+  changeHandler = (event) => {
+    this.setState({
+      note: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault() // agar ketika di submit tidak akan me-reload lagi
+    console.log(this.state.note);
   }
 
   render() {
@@ -55,7 +82,7 @@ export default class Cart extends Component {
                   </ListGroup.Item>
                 ))
               }
-              <CartModals handleClose={this.handleClose} {...this.state} />
+              <CartModals handleClose={this.handleClose} {...this.state} increament={this.increament} decreament={this.decreament} changeHandler={this.changeHandler} handleSubmit={this.handleSubmit} />
             </ListGroup>
           )
         }
