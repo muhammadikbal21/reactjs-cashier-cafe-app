@@ -1,5 +1,6 @@
 import Buy from "./Buy";
 import Cart from "./Cart";
+import CartModals from "./CartModals";
 import Categories from "./Categories";
 import Header from "./Header";
 import Menus from "./Menus";
@@ -11,5 +12,6 @@ export {
   Categories,
   Products,
   Menus,
-  Buy
+  Buy,
+  CartModals
 }

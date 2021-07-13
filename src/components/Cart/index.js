@@ -1,9 +1,33 @@
 import React, { Component } from 'react'
 import { Badge, Col, ListGroup, Row } from 'react-bootstrap'
 import { numberWithCommas } from '../../utils/numberFormats'
-import { Buy } from '../../components'
+import { Buy, CartModals } from '../../components'
 
 export default class Cart extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      showModal: false,
+      cartDetail: false,
+      quantity: 0,
+      note: ''
+    }
+  }
+
+  handleShow = (cart) => {
+    this.setState({
+      showModal: true,
+      cartDetail: cart
+    })
+  }
+  
+  handleClose = () => {
+    this.setState({
+      showModal: false
+    })
+  }
+
   render() {
     const {carts} = this.props
     return (
@@ -15,7 +39,7 @@ export default class Cart extends Component {
             <ListGroup variant="flush">
               {
                 carts.map((cart) => (
-                  <ListGroup.Item key={cart.id}>
+                  <ListGroup.Item key={cart.id} onClick={() => this.handleShow(cart)}>
                     <Row>
                       <Col xs={2}>
                         <h5>
@@ -31,6 +55,7 @@ export default class Cart extends Component {
                   </ListGroup.Item>
                 ))
               }
+              <CartModals handleClose={this.handleClose} {...this.state} />
             </ListGroup>
           )
         }
