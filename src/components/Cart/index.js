@@ -68,6 +68,7 @@ export default class Cart extends Component {
     }
     axios.put(`${API_URL}/carts/${this.state.cartDetail.id}`, data)
     .then((res) => {
+      this.props.getListCarts()
       swal({
         title: "Update Sukses!",
         text: `${data.product.name} sukses update ke keranjang`,
@@ -85,6 +86,7 @@ export default class Cart extends Component {
     this.handleClose()
     axios.delete(`${API_URL}/carts/${id}`)
     .then((res) => {
+      this.props.getListCarts()
       swal({
         title: "Hapus Sukses!",
         text: `${this.state.cartDetail.product.name} sukses dihapus di keranjang`,

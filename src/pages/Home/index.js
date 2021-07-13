@@ -26,27 +26,18 @@ export default class Home extends Component {
       console.log("Ini Error Ya: ", err);
     })
 
+    this.getListCarts()
+  }
+
+  getListCarts = () => {
     axios.get(`${API_URL}/carts`)
-    .then(res => {
+    .then((res) => {
       const carts = res.data
       this.setState({carts: carts})
     })
     .catch(err => {
       console.log("Ini Error Ya: ", err);
     })
-  }
-
-  componentDidUpdate(prevState) {
-    if (this.state.carts !== prevState.carts) {
-      axios.get(`${API_URL}/carts`)
-      .then(res => {
-        const carts = res.data
-        this.setState({carts: carts})
-      })
-      .catch(err => {
-        console.log("Ini Error Ya: ", err);
-      })
-    }
   }
 
   changeCategory = (value) => {
@@ -76,6 +67,7 @@ export default class Home extends Component {
         }
         axios.post(`${API_URL}/carts`, cart)
         .then(res => {
+          this.getListCarts()
           swal({
             title: "Sukses!",
             text: `${cart.product.name} sukses masuk ke keranjang`,
@@ -93,6 +85,7 @@ export default class Home extends Component {
         }
         axios.put(`${API_URL}/carts/${res.data[0].id}`, cart)
         .then(res => {
+          this.getListCarts()
           swal({
             title: "Sukses!",
             text: `${cart.product.name} sukses masuk ke keranjang`,
@@ -119,7 +112,7 @@ export default class Home extends Component {
           <Row>
             <Categories changeCategory={this.changeCategory} chooseCategory={chooseCategory} />
             <Products menus={menus} cartIn={this.cartIn} />
-            <Cart carts={carts} {...this.props} />
+            <Cart carts={carts} {...this.props} getListCarts={this.getListCarts} />
           </Row>
         </Container>
       </div>
